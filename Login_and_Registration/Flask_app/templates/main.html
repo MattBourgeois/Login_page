@@ -1,0 +1,70 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+    <div id="content">
+        <form action="/register" method="POST">
+            <h3 class="text-primary">Register</h3>
+            {% with messages = get_flashed_messages (catagory_filter = ["register"]) %}
+                {% if message %}
+                    <div class="Alert" role="alert">
+                        <strong>Flash AhHhHhH!</strong>
+                        {% for messages in messages %}
+                        <p>{{message</p>
+                        {% end for %}
+                    </div>
+                {% endif %}
+            {% endwith %}
+            <div class="form-group">
+                <label for="fname">First Name:</label>
+                <input type="text" name="fname" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="lname">Last Name:</label>
+                <input type="text" name="lname" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="emial" >Email:</label>
+                <input type="text" name="email" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="text" name="password" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="confirm">Confirm Password:</label>
+                <input type="text" name="confirm" class="form-control">
+            </div>
+            <input type="submit" value="Register!!">
+        </form> 
+        <form action="/log" method="post">
+            <h3>Login</h3>
+            {% with messages = get_flashed_messages(catagory_filter = ['login]'])}
+                {% if messages %}
+                <div class="alert">
+                    <strong>Flash AhHhHhH!</strong>
+                    {% for message in messages %}
+                    <p>{{message}}</p>
+                    {% endfor %}
+                </div>
+                {% endif %}
+            {% endwith %}
+            <div class="form-group">
+                <label for="lemail">Email:</label>
+                <input type="text" name="lemail" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="text" name="password" class="form-control"> 
+            </div>
+            
+            <input type="submit" value="Login!!">
+        </form>
+    </div>
+</body>
+</html>
